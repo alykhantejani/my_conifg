@@ -6,3 +6,7 @@ alias ls="ls -G"
 alias c="clear"
 alias p="pwd"
 
+#git bash completion after running brew install bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
