@@ -14,6 +14,7 @@ Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 "Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
 " All Plugins must be added before the following line
@@ -62,9 +63,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeIgnore=['\.pyc$', '.DS_Store', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" ctags + ctrlP
+" ctags + ctrlP -- this will find function definitions
 nnoremap <leader>. :CtrlPTag<cr>
-
+" ack.vim to use ag instead
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" <space>a is a shortcut got ack/ag
+map <leader>a :Ack<space>
 
 "let g:ale_linters = {'python': ['pylint']}
 map <C-Y> :call yapf#YAPF()<cr>
@@ -77,3 +81,6 @@ set softtabstop=4 "number of spaces in tab when editing
 set expandtab "make tabs = spaces
 set number "show line numbers
 set showmatch "highlight matching brackets
+set ruler
+set hlsearch
+
