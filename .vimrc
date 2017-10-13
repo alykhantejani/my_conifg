@@ -15,7 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-
+Bundle 'christoomey/vim-tmux-navigator'
 "Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
 " All Plugins must be added before the following line
 call vundle#end()            " required
