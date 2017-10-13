@@ -15,32 +15,26 @@ function prompt_git() {
     local output
     output="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
     [[ $? != 0 ]] && return;
-    echo " $style_branch($output)"
+    echo " ($output)"
 }
+
 
 # Base styles and color palette
 export TERM='xterm-256color'
-BOLD=$(tput bold)
+BOLD="\[$(tput bold)\]"
 RESET=$(tput sgr0)
 
-KHAKI1=$(tput setaf 228)
-WHITE=$(tput setaf 15)
-DODGER_BLUE=$(tput setaf 33)
-GREEN3=$(tput setaf 40)
+style_user="$KHAKI1"
+style_path="\[$RESET\]$DODGER_BLUE"
+style_branch="\[$RESET\]$GREEN3"
+style_chars="\[$RESET\]$WHITE"
 
-style_user="$RESET$KHAKI1"
-style_path="$RESET$DODGER_BLUE"
-style_branch="$RESET$GREEN3"
-style_chars="$RESET$WHITE"
+KHAKI1="\[$RESET\]\[\033[38;5;228m\]"
+WHITE="\[$RESET\]\[\033[38;5;15m\]"
+DODGER_BLUE="\[$RESET\]\[\033[38;5;33m\]"
+GREEN3="\[$RESET\]\[\033[38;5;40m\]"
 
-export PS1=""
-PS1+="\[$style_chars\]["
-PS1+="$style_user\u" # Username
-PS1+="$style_chars:" # :
-PS1+="$style_path\W" # Working directory
-PS1+="\$(prompt_git)" # Git details
-PS1+="\[$style_chars\]]\$ \[$RESET\]" # ]$ and reset color
-
+export PS1="$BOLD$WHITE[$KHAKI1\u$WHITE:$DODGER_BLUE\W$GREEN3\$(prompt_git)$WHITE]\\$ \[$RESET\]"
 
 _expand(){ true; } # stop ~ expanding to /Users/... with <tab> press
 
