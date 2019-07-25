@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'wincent/command-t'
 Plugin 'terryma/vim-multiple-cursors'
 " All Plugins must be added before the following line
@@ -47,6 +48,9 @@ set ruler
 set hlsearch
 set clipboard=unnamedplus,unnamed
 set backspace=indent,eol,start
+
+"command t max files
+let g:CommandTMaxFiles=1000000
 
 " jedi vim stuff
 set omnifunc=jedi#completions
