@@ -57,5 +57,8 @@ set omnifunc=jedi#completions
 
 "nerdTree stuff
 "ctrl-n to toggle nerdTree
-map <C-n> :NERDTreeToggle<CR>
-
+map <C-n> :NERDTreeToggle<CR> 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close vim if nerdtree is the only open window
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" above 2 lines open nerd tree with vim
