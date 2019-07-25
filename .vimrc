@@ -55,4 +55,7 @@ let g:CommandTMaxFiles=1000000
 " jedi vim stuff
 set omnifunc=jedi#completions
 
+"nerdTree stuff
+"ctrl-n to toggle nerdTree
+map <C-n> :NERDTreeToggle<CR>
 
