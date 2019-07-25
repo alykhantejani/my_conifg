@@ -62,3 +62,8 @@ map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close vim if nerdtree is the only open window
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"Ale Toggle map
+map <leader>a :ALEToggle<CR>
+"Turn ale off when opening vim
+autocmd VimEnter * :ALEToggle
