@@ -8,6 +8,7 @@ call vundle#begin()
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'w0rp/ale'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
@@ -67,3 +68,18 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <leader>a :ALEToggle<CR>
 "Turn ale off when opening vim
 autocmd VimEnter * :ALEToggle
+
+"make resizing easier
+nnoremap <silent> + :exe "resize +2"<CR>
+nnoremap <silent> - :exe "resize -2"<CR>
+nnoremap <silent> < :exe "vertical resize -2"<CR>
+nnoremap <silent> > :exe "vertical resize +2"<CR>
+
+"airline show open buffers in top
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+
+
+" ctags stuff
+set tags=/Users/atejani/workspace/source/twml/tags,./tags;~
