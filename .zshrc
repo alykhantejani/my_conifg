@@ -4,7 +4,7 @@ export TERM=screen-256color
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/atejani/.oh-my-zsh"
+export ZSH="/Users/aly/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,7 +112,5 @@ prompt pure
 autoload -U compinit
 compinit
 
-# Automatically placed at end of file by MDE. To disable this behavior: touch ~/.no-mde-dotfile. Ideally you do not need to do this. Please contact mde-support@twitter.com to discuss long-term alternatives.
-source /opt/twitter_mde/etc/bash_profile
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
