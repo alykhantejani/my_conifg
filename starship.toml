@@ -1,0 +1,30 @@
+format = """
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$cmd_duration \
+$conda \
+$python\
+$line_break\
+$character"""
+
+[conda]
+  format = "[$symbol$environment]($style)"
+
+[directory]
+ truncation_length = 4
+ truncation_symbol = ".../"
+
+[fill]
+  symbol=" "
+
+[python]
+  format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
