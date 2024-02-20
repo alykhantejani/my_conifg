@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dracula"
+#ZSH_THEME="dracula"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -199,8 +199,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cat=bat
 alias pre="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
-alias ls="exa"
-alias ll="exa -l"
+alias ls="eza"
+alias ll="eza -l"
 alias find_conflicts="git diff --name-only --diff-filter=U"
 alias rename_windows="tmux movew -r"
 alias t="tmux"
@@ -212,28 +212,18 @@ alias notebook="jupyter lab"
 alias sshdev='gcloud compute ssh --zone "europe-west2-c" "atejani-dev"  --project "maximal-furnace-783"'
 alias scpdev='gcloud compute scp --zone "europe-west2-c" "atejani-dev"  --project "maximal-furnace0783"'
 alias rename_windows='tmux move-window -r '
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/alykhantejani/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/alykhantejani/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/alykhantejani/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/alykhantejani/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/alykhantejani/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alykhantejani/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/private/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/alykhantejani/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alykhantejani/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/private/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/completion.zsh.inc'; fi
