@@ -199,8 +199,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cat=bat
 alias pre="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
-alias ls="exa"
-alias ll="exa -l"
+alias ls="eza"
+alias ll="eza -l"
 alias find_conflicts="git diff --name-only --diff-filter=U"
 alias rename_windows="tmux movew -r"
 alias t="tmux"
